@@ -1,0 +1,144 @@
+<div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header" ng-show="title">
+        <button type="button"
+                    class="close"
+                    ng-click="$hide()"><i class="fa fa-times"></i></button>
+        <h4 class="modal-title">Add Your Look</h4>
+      </div>
+
+  <div class="modal-body"
+          ng-show="scrapePostForm">
+    <form ng-submit="addScrapePost()"
+              style="margin-top:30px">
+      <h3>Find a Look</h3>
+      <div class="form-group">
+        <input type="text"
+                  class="form-control"
+                  placeholder="Title"
+                  ng-model="look.title">
+      </div>
+      <div class="form-group">
+        <input type="text"
+                  class="form-control"
+                  placeholder="Link URL  (Pinterest)"
+                  ng-model="look.link"
+                  ng-disabled="gotScrapeResults">
+      </div>
+
+      <div class="spinner"
+             ng-show="loading">
+        <img src="assets/images/spinner.gif">
+      </div>
+
+    <div class="col-md-6" id="alertContainer"></div>
+
+  <div class="listing-details"
+          ng-show="showScrapeDetails">
+        <div class="form-group">
+          <div class="row listing-description-row">
+            <label for="description"
+                      class="col-xs-12">Description</label></div>
+            <textarea class="form-control"
+                           rows="3"
+                           ng-model="look.description">
+                    </textarea>
+              </div>
+
+           <div class="form-group">
+             <div class="listing-image">
+                <img src="{{look.imgThumb}}"
+                        class="img-thumbnail img-responsive">
+              </div>
+             </div>
+      <button type="submit"
+                  class="btn btn-primary">Submit</button>
+      <button type="button"
+                  class="btn btn-default"
+                  ng-click="$hide()">Cancel</button>
+      </div>
+    </div>
+  </form>
+
+    <div class="modal-body">
+      <div class="uploadLookTitle">
+        <button class="btn btn-primary btn-lg btn-block"
+            ng-show="uploadLookTitle"
+            ng-click="showUploadForm()">Upload a Look</button>
+      </div>
+    </div>
+
+    <form name="myForm"
+              enctype="multipart/form-data"
+              ng-show="uploadLookForm">
+      <div class="row row-centered">
+        <div class="col-centered">
+          <div class="well well-lg">
+            <div class="form-group">
+              <label class="control-label"
+                        for="picFile"><h3>Look Details</h3></label>
+
+             <div class="form-group">
+                <input type="text"
+                          class="form-control"
+                          placeholder="Title"
+                          ng-model="look.title" required /><i ng-show="myForm.title.$error.required">*required</i>
+              </div>
+
+                 <div class="form-group">
+                    <textarea class="form-control"
+                              placeholder="Description"
+                              rows="3"
+                              ng-model="look.description" required />
+                              <i ng-show="myForm.description.$error.required">*required</i>
+                            </textarea>
+                      </div>
+
+              <div class="controls">
+                <input class="bottom-marg-15"
+                          type="file"
+                          ngf-select
+                          ng-model="picFile"
+                          accept="image/*"
+                          ngf-max-size="2MB" />
+
+                <span class="progress" ng-show="picFile.progress >= 0">
+                  <div style="width:{{picFile.progress}}%" ng-bind="picFile.progress + '%'" class="ng-binding"></div>
+               </span>
+
+                <i ng-show="myForm.file.$error.maxSize">File too large
+                {{picFile.size / 1000000|number:1}}MB: max {{picFile.$errorParam}}</i>
+                <img ng-show="myForm.file.$valid"
+                        ngf-src="!picFile.$error && picFile"
+                        class="img-thumbnail img-responsive">
+
+                <button id="loadButton"
+                            ng-disabled="!myForm.$valid"
+                            class="btn btn-primary btn-lg"
+                            ng-click="uploadPic(picFile)">Submit</button>
+
+                <div class="col-md-6" id="alertContainer"></div>
+                <img ngf-src="picFile"
+                        class="img-thumbnail img-responsive"
+                        ng-show="picPreview">
+
+                <span ng-show="picFile.result">Upload Successful</span>
+                <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+
+        <div class="modal-footer close-btn-main">
+        <button type="button"
+                    class="btn btn-default pull-left"
+                    ng-click="$hide()">Close</button>
+                    </div>
+
+      </div>
+    </div>
+  </div>

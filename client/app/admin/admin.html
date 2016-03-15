@@ -1,0 +1,49 @@
+<!-- <div ng-include="'app/components/navbar/navbar.html'"></div>
+ -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+       <div class="list-admin-users">
+          <ul>
+          <h2>All Users</h2>
+            <li ng-repeat="user in users">
+              <p>{{ user.name }}  -  {{ user.email }}
+                <button class="btn btn-sm btn-warning"
+                            data-title="DELETE User  -  Cannot be Undone"
+                            bs-tooltip
+                            ng-click = "deleteUser(user)">DELETE
+                </button>
+              </p></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <h2>All Looks</h2>
+            <div class="panel panel-default">
+              <div class="panel-body listing-images-admin">
+              <ul class="dynamic-grid angular-grid"
+                    angular-grid="looks"
+                    grid-width="150"
+                    gutter-size="10"
+                    angular-grid-id="gallery"
+                    refresh-on-img-load="true">
+     <li data-ng-repeat="look in looks"
+          class="grid"
+          ng-cloak>
+        <a class="lookLink"
+             ng-click="editLook(look)"
+             data-template-url="app/admin/remove_look_modal.html"
+             data-animation="am-fade-and-scale"
+             bs-modal="showModal">
+          <img ng-src="{{ look.image }}"
+                  class="grid-img"
+                  data-actual-width="{{ look.actualWidth }}"
+                  data-actual-height="{{ look.actualHeight }}" /></a>
+      </li>
+    </ul>
+                </div>
+              </div>
+          </div>
+       </div>
+    </div>

@@ -1,0 +1,76 @@
+<!doctype html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title>Collectors Hub</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="bower_components/angular-motion/dist/angular-motion.min.css">
+    <link rel="stylesheet" href="app/app.css">
+    <link rel="stylesheet" href="app/account/login/login.css">
+    <link rel="stylesheet" href="app/main/main.css">
+    <link rel="stylesheet" href="app/look/look.css">
+    <link rel="stylesheet" href="app/admin/admin.css">
+    <link rel="stylesheet" href="app/account/profile/profile.css">
+    <link rel="stylesheet" href="app/myLooks/myLooks.css">
+    <link rel="stylesheet" href="app/components/navbar/navbar.css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+  </head>
+
+  <body ng-app="app">
+    <div ng-include="'app/components/navbar/navbar.html'"></div>
+    <div ui-view></div>
+
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/angular-strap/dist/angular-strap.min.js"></script>
+    <script src="bower_components/angular-strap/dist/angular-strap.tpl.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+    <script src='bower_components/ngInfiniteScroll/build/ng-infinite-scroll.min.js'></script>
+    <script src="bower_components/angular-moment/angular-moment.min.js"></script>
+    <script src="bower_components/angular-utils-pagination/dirPagination.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/account/account.js"></script>
+    <script src="app/account/profile/profile.Ctrl.js"></script>
+    <script src="app/account/forgotpassword/forgotpassword.controller.js"></script>
+    <script src="app/account/login/login.Ctrl.js"></script>
+    <script src="app/account/settings/settings.Ctrl.js"></script>
+    <script src="app/account/signup/signup.Ctrl.js"></script>
+    <script src="app/admin/admin_config.js"></script>
+    <script src="app/admin/admin.Ctrl.js"></script>
+    <script src="app/main/main.Ctrl.js"></script>
+    <script src="app/main/main_config.js"></script>
+    <script src="app/mylooks/myLooks_config.js"></script>
+    <script src="app/mylooks/myLooks.Ctrl.js"></script>
+    <script src="app/look/look_config.js"></script>
+    <script src="app/look/look.Ctrl.js"></script>
+    <script src="app/components/apiFactory/looksAPI.js"></script>
+    <script src="app/components/apiFactory/commentAPI.js"></script>
+    <script src="app/components/apiFactory/adminAPI.js"></script>
+    <script src="app/components/apiFactory/scrapeAPI.js"></script>
+    <script src="app/components/auth/auth.Srvc.js"></script>
+    <script src="app/components/auth/user.Srvc.js"></script>
+    <script src="app/components/mongoose-error/mongoose-error.directive.js"></script>
+    <script src="app/components/navbar/navbar.controller.js"></script>
+    <script src="app/components/angulargrid/angulargrid.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+  </body>
+</html>

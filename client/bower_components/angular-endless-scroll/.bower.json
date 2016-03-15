@@ -1,0 +1,40 @@
+{
+  "name": "angular-endless-scroll",
+  "version": "0.0.5",
+  "main": "./build/angular-endless-scroll.js",
+  "description": "Endless scrolling for AngularJS",
+  "author": {
+    "name": "David Chin",
+    "email": "davidchin.yf@gmail.com"
+  },
+  "homepage": "http://davidchin.me",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "docs",
+    "src",
+    "test",
+    "Gruntfile.js",
+    "karma.conf.js",
+    "bower.json",
+    "package.json"
+  ],
+  "dependencies": {
+    "angular": ">=1.2.6",
+    "jquery": ">=1.9.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.2.13"
+  },
+  "_release": "0.0.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.0.5",
+    "commit": "90911d3ed78d61320ff256acd9fbf711523f5851"
+  },
+  "_source": "git://github.com/davidchin/angular-endless-scroll.git",
+  "_target": "~0.0.5",
+  "_originalSource": "angular-endless-scroll"
+}

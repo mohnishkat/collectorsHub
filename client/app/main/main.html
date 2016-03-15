@@ -1,0 +1,110 @@
+<!-- <div ng-include="'app/components/navbar/navbar.html'"></div>
+ -->
+<div class="container">
+      <!-- Search, and Upload Button -->
+      <div id="searchFilterWrap">
+        <form id="searchForm">
+          <input type="text"
+                    id="searchBox"
+                    placeholder="Search by title"
+                    ng-model="searchTxt"
+                    ng-model-options="{debounce : 600}" />
+        </form>
+
+        <div class="modal-backdrop-am-fade"
+              id="sortByWrap">
+          Sort By : <i class="fa fa-calendar"
+                            ng-click="sortByTime()"></i>
+                        <i class="fa fa-thumbs-up"
+                            ng-click="sortByLikes()"></i>
+
+          <button class="btn btn-primary"
+                      data-animation="am-fade-and-scale"
+                      data-placement="center"
+                      data-template-url="app/main/addLookModal.html"
+                      bs-modal="showModal">Add Look</button>
+            </div>
+          </div>
+
+      <div class="spinner"
+             ng-show="loading">
+        <img src="assets/images/spinner.gif">
+      </div>
+
+  <!-- Angular Grid -->
+  <div class="container" infinite-scroll='nextPage()' infinite-scroll-disabled='busy || noMoreData' infinite-scroll-distance="0.1">
+    <ul class="dynamic-grid angular-grid"
+          angular-grid="looks"
+          grid-width="200"
+          gutter-size="10"
+          angular-grid-id="gallery"
+          refresh-on-img-load="true">
+     <li data-ng-repeat="look in allData track by $index"
+          class="grid"
+          ng-cloak>
+        <a ui-sref="look ({ lookId: look._id })"
+            class="lookLink">
+          <img ng-src="{{ look.image }}"
+                  class="grid-img"
+                  data-actual-width="{{ look.actualWidth }}"
+                  data-actual-height="{{ look.actualHeight }}" />
+          <div class="look-description-trim">
+            {{ look.description.substr(0,100) }}
+          </div>
+
+          <div class="titleClass">
+            {{ look.title }}
+          </div>
+        </a>
+        <div class="social">
+        <a href="#"
+             class="like-look"
+             ng-click="addVote(look)">
+          <i class="fa fa-thumbs-o-up fa-2x icon-like"></i></a>
+            <span class="likeCount">{{ look.upVotes }}</span>
+
+            <span class="viewCount pull-right">{{ look.views }}</span>
+          <i class="fa fa-eye fa-2x pull-right icon-views"></i>
+
+        </div>
+      </li>
+    </ul>
+    <div ng-show='busy'>Loading data...</div>
+  </div>
+</div>
+
+<!-- Show All Looks Pre Angular Grid-->
+<!-- <div class="panel panel-default">
+       <div class="panel-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 class="page-header">All Looks:
+              <span class="label label-info">{{ looks.length }}</span> Looks
+            </h1>
+            <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6"
+                  ng-repeat="look in looks | filter:search">
+              <li>
+                <span class="input-group-addon">
+                  <a href="#" ng-click="deleteLook(look)">
+                     <span class="glyphicon glyphicon-remove pull-left"></span>
+                  </a>
+                  <a ui-sref="look ({ lookId: look._id })"
+                       data-title="{{look.title}}"
+                       data-animation="am-flip-x"
+                       bs-tooltip>{{ look.title }}
+                  </a>
+                </span>
+              </li>
+              <li>
+                <span class="input-group-addon listing-image">
+                  <a ui-sref="look ({ lookId: look._id })">
+                    <img class="thumbnail img-responsive"
+                            ng-src="{{ look.image }}">
+                  </a>
+                </span>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div> -->

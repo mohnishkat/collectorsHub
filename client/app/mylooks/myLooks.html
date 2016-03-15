@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="user-looks-title">
+    <h2>My Looks:
+      <span class="label label-info">{{ userLooks.length }}</span> Looks Submitted</h2>
+  </div>
+  <div class="spacer"></div>
+
+  <div class="show-no-looks"
+          ng-if="noLooks()">
+          <h3>No Looks Added, Why don't you <a ui-sref="main">add one</a>?</h>
+        </div>
+
+    <!-- Angular Grid -->
+    <ul class="dynamic-grid angular-grid"
+          angular-grid="looks"
+          grid-width="200"
+          gutter-size="10"
+          angular-grid-id="gallery"
+          refresh-on-img-load="true" >
+      <li data-ng-repeat="look in userLooks"
+          class="grid"
+          ng-cloak>
+        <a ui-sref="look ({ lookId: look._id })"
+            class="lookLink">
+          <img ng-src="{{ look.image }}"
+                  class="grid-img"
+                  data-actual-width="{{ look.actualWidth }}"
+                  data-actual-height="{{ look.actualHeight }}" />
+          <div class="look-description-trim">
+            {{ look.description.substr(0,100) }}
+          </div>
+
+          <div class="titleClass">
+            {{ look.title }}
+          </div>
+        </a>
+        <a href="#"
+             class="like-look"
+             ng-click="addLike(look)">
+          <i class="fa fa-2x fa-thumbs-o-up pull-left icon-like"></i></a>
+            <span class="likeCount">{{ look.upVotes }}</span>
+                <a href="#"
+                     ng-click="editLook(look)"
+                     class="edit-look"
+                     data-animation="am-fade-and-scale"
+                     data-template-url="app/myLooks/edit_look_modal.html"
+                     bs-modal="showModal">
+                  <i class="fa fa-2x fa-pencil pull-right icon-edit"></i></a>
+                <a href="#"
+                     class="edit-look"
+                     ng-click="delete(look)">
+                   <i class="fa fa-2x fa-trash-o pull-right icon-edit"
+                       data-title="DELETE Item - Cannot be Undone"
+                       bs-tooltip></i></a>
+      </li>
+    </ul>
+  </div>
