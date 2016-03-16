@@ -39,7 +39,7 @@
           gutter-size="10"
           angular-grid-id="gallery"
           refresh-on-img-load="true">
-     <li data-ng-repeat="look in allData track by $index"
+     <li data-ng-repeat="look in looks track by $index"
           class="grid"
           ng-cloak>
         <a ui-sref="look ({ lookId: look._id })"
@@ -72,39 +72,3 @@
     <div ng-show='busy'>Loading data...</div>
   </div>
 </div>
-
-<!-- Show All Looks Pre Angular Grid-->
-<!-- <div class="panel panel-default">
-       <div class="panel-body">
-        <div class="row">
-          <div class="col-lg-12">
-            <h1 class="page-header">All Looks:
-              <span class="label label-info">{{ looks.length }}</span> Looks
-            </h1>
-            <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6"
-                  ng-repeat="look in looks | filter:search">
-              <li>
-                <span class="input-group-addon">
-                  <a href="#" ng-click="deleteLook(look)">
-                     <span class="glyphicon glyphicon-remove pull-left"></span>
-                  </a>
-                  <a ui-sref="look ({ lookId: look._id })"
-                       data-title="{{look.title}}"
-                       data-animation="am-flip-x"
-                       bs-tooltip>{{ look.title }}
-                  </a>
-                </span>
-              </li>
-              <li>
-                <span class="input-group-addon listing-image">
-                  <a ui-sref="look ({ lookId: look._id })">
-                    <img class="thumbnail img-responsive"
-                            ng-src="{{ look.image }}">
-                  </a>
-                </span>
-              </li>
-            </ul>
-        </div>
-      </div>
-    </div>
-  </div> -->

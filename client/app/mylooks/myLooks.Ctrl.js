@@ -57,7 +57,7 @@
         $scope.userLooks = data;
       });
 
-    $scope.editLook = function(look) {
+    $scope.editLooks = function(look) {
       looksAPI.getUpdateLook(look)
         .then(function(data) {
           console.log(data);
@@ -72,11 +72,13 @@
 
       looksAPI.updateLook(look)
         .then(function(data) {
-          console.log('Look updated!');
-          console.log(data);
-          $scope.editLook.title = '';
-          $scope.editLook.description = '';
-          alertSuccess.show();
+            console.log('Look updated!');
+            console.log(data);
+            var index = $scope.userLooks.indexOf(look);
+            $scope.userLooks.splice(index, 1, data);
+            $scope.editLook.title = '';
+            $scope.editLook.description = '';
+            alertSuccess.show();
         })
         .catch(function(err) {
           console.log('failed', err);

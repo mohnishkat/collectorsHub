@@ -56,6 +56,7 @@
       .then(function(data) {
         console.log(data);
         $scope.allData = data;
+        $scope.looks = data;
         $scope.nextPage();
         $scope.busy = false;
       })
@@ -94,7 +95,6 @@
     }
 
     $scope.addVote = function(look) {
-
       looksAPI.upVoteLook(look)
         .then(function(data) {
           console.log(data);
@@ -108,7 +108,6 @@
     // Watch for changes to URL, Scrape & Display the image
     $scope.$watch("look.link", function(newVal, oldVal) {
       // console.log('newVal: ', newVal, ' oldVal: ', oldVal);
-
       if (newVal.length > 5) {
         $scope.loading = true;
         var link = {
@@ -153,16 +152,18 @@
       }
 
       looksAPI.createScrapeLook(look)
-        .success(function(data) {
+        .then(function(data) {
           console.log('posted from frontend success');
-          alertSuccess.show();
+          console.log(data);
           $scope.showScrapeDetails = false;
           $scope.gotScrapeResults = false;
           $scope.look.title = '';
           $scope.look.link = '';
-          $scope.looks.splice(0, 0, data);
+          $scope.looks.splice(0, 0, data.data);
+          alertSuccess.show();
+          //$scope.allData.splice(0, 0, data);
         })
-        .error(function() {
+        .catch(function() {
           console.log('failed to post from frontend');
           $scope.showScrapeDetails = false;
           alertFail.show();
@@ -185,7 +186,7 @@
           _creator: $scope.user._id
         }
       }).then(function(resp) {
-        console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
+        //console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
         $scope.looks.splice(0, 0, resp.data);
         $scope.look.title = '';
         $scope.look.description = '';

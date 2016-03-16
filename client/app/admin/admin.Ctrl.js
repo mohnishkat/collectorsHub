@@ -72,7 +72,7 @@
         });
     }
 
-    $scope.editLook = function(look) {
+    $scope.editLooks = function(look) {
       looksAPI.getUpdateLook(look)
         .then(function(data) {
           console.log(data);
@@ -92,12 +92,10 @@
         .then(function(data) {
             console.log('Look updated!');
             console.log(data);
-            //var index = $scope.looks.indexOf(look);
-            $scope.editLook.title = '';
-            $scope.editLook.description = '';
-            //index = data;
-            $scope.looks.indexOf(look) = data;
-            //$scope.looks.splice(index, 1, data);
+            var index = $scope.looks.indexOf(look);
+            $scope.looks.splice(index, 1, data);
+            $scope.editLook.title = look.title;
+            $scope.editLook.description = look.description;
             alertSuccess.show();
         })
         .catch(function(err) {
@@ -117,8 +115,8 @@
           $scope.editLook.description = '';
           $scope.editLook.title = '';
           $scope.deleteBtn = false;
-          alertSuccess.show();
           $scope.looks.splice(index, 1);
+          alertSuccess.show();
           console.log('success, Look deleted ');
         })
         .error(function(err) {

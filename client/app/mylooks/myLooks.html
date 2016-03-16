@@ -5,10 +5,9 @@
   </div>
   <div class="spacer"></div>
 
-  <div class="show-no-looks"
-          ng-if="noLooks()">
-          <h3>No Looks Added, Why don't you <a ui-sref="main">add one</a>?</h>
-        </div>
+  <div class="show-no-looks" ng-if="noLooks()">
+    <h3>No Looks Added, Why don't you <a ui-sref="main">add one</a>?</h>
+  </div>
 
     <!-- Angular Grid -->
     <ul class="dynamic-grid angular-grid"
@@ -40,7 +39,7 @@
           <i class="fa fa-2x fa-thumbs-o-up pull-left icon-like"></i></a>
             <span class="likeCount">{{ look.upVotes }}</span>
                 <a href="#"
-                     ng-click="editLook(look)"
+                     ng-click="editLooks(look)"
                      class="edit-look"
                      data-animation="am-fade-and-scale"
                      data-template-url="app/myLooks/edit_look_modal.html"

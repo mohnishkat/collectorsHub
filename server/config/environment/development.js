@@ -5,7 +5,7 @@
 module.exports = {
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/bestDressed-dev-2'
+    uri: 'mongodb://localhost/collectorsHub-dev-2'
   },
 
   // List of user roles
