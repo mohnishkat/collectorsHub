@@ -12,6 +12,7 @@ module.exports = function(app) {
   app.use('/api/look', require('./api/look'));
   app.use('/api/links', require('./api/imgLinks'));
   app.use('/api/comments', require('./api/comments'));
+  app.use('/api/blogs', require('./api/blogs'));
 
   app.post('/forgotpassword', require('./forgotpassword').reset);
 

@@ -14,9 +14,8 @@
             <span class="icon-bar"></span>
         </button>
       <a class="navbar-brand" ui-sref="home">
-        <img class="navbar-logo"
-                 alt="BestDressed"
-                 src="assets/images/logo1.png">
+        <img alt="CollectorsHub"
+                 src="assets/images/yeoman.png" style="height:100%">
       </a>
     </div>
 
@@ -28,6 +27,9 @@
 
          <li ng-show="isAdmin()" ng-class="{active: isActive('/admin')}">
          <a ui-sref="admin">Admin</a></li>
+
+         <li ng-show="isAdmin()" ng-class="{active: isActive('/blogs')}">
+           <a ui-sref="admin-all-blogs">CRUD Blogs</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">

@@ -11,7 +11,8 @@
       'ngFileUpload',
       'angularGrid',
       'angularMoment',
-      'mgcrea.ngStrap'
+      'mgcrea.ngStrap',
+      'textAngular'
     ])
     .config(config)
     .run(run)
