@@ -1,0 +1,74 @@
+.contain{
+  margin: 0 auto;
+  /* Smartphones (portrait and landscape) ----------- */
+  @media only screen and (min-device-width: 320px) and (max-device-width:600px ){
+    width: 300px;
+  }
+  /* iPads (portrait and landscape) ----------- */
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    width: 448px;
+  }
+  /* Desktops and laptops ----------- */
+  @media only screen  and (min-width : 1224px) {
+    width:804px;
+  }
+  /* Large screens ----------- */
+  @media only screen  and (min-width : 1824px) {
+    width: 1104px;
+  }
+}
+
+.top{
+  position: relative;
+  margin-left: 0px;
+  width: 100%;
+  /*background-image: url('/../assets/images/haven1.png');*/
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.top h1 {
+  font-size: 50px;
+  line-height: 1;
+  color: white;
+  display: inline-block;
+  vertical-align: middle;
+  letter-spacing: -1px;
+  margin-top: 150px;
+}
+.top p{
+  font-size: 20px;
+}
+.blog {
+  padding: 30px 15px;
+  color: #F5F5F5;
+  text-align: center;
+  color: white;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.cover{
+  min-height: 100%;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+}
+section{
+  padding-top: 60px;
+}
+.row{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.subheader{
+  margin: 5px 0 20px 0;
+}
+.info{
+  margin-bottom: 0px;
+}
+.main_post_img{
+  height: 300px;
+  width:100%;
+}
+.post > div{
+  margin-bottom: 30px;
+}

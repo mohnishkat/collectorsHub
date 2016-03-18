@@ -1,0 +1,29 @@
+<section>
+  <div class="container box">
+    <article ng-repeat="b in blogs">
+      <header>
+        <div class="row">
+          <h1 id="title">{{b.short_name}}</h1>
+        </div>
+        <div class="row subheader">
+          <span>
+            <p class="info" id="one_info">at {{b.created_at}}</p>
+          </span>
+        </div>
+      </header>
+      <div class="post">
+        <div>
+          <img class="img-responsive main_post_img" ng-src="/../assets/images/haven1.png" />
+        </div>
+        <div>
+          <p class="intro top">{{b.short_desc}}</p>
+        </div>
+        <div>
+          <md-card-actions layout="row" layout-align="end center">
+            <md-button ui-sref-active="active" ui-sref="user-blog({id: b._id})" class="md-body-1 md-primary">Read More</md-button>
+          </md-card-actions>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>

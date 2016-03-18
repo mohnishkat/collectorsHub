@@ -91,3 +91,8 @@ a[ng-click]  { cursor:pointer; }
     font-size: 100%;
     margin:20px 0;
 }
+
+img {
+    width: 100%;
+    height: auto;
+}

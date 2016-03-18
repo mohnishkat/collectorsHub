@@ -3,33 +3,6 @@
 var blog = require('./blogs.model');
 var config = require('../../config/environment');
 
-// exports.getBlogsPage = function(req, res) {
-//     blog.find({}).sort({ created_at: -1 }).exec(function(err, blogs) {
-//         if(err) throw(err);
-//
-//         res.render("client/index", {
-//             title: "Dimitri Mikadze",
-//             blogs: blogs,
-//             desc: "Dimitri Mikadze Personal Blog",
-//             url: "/"
-//         });
-//     });
-// };
-
-// exports.getBlogByIdPage = function(req, res) {
-//
-//     var name = req.params.name;
-//     var id = req.params.id;
-//
-//     blog.findById(id, function(req, blog) {
-//        res.render("client/blog/blog", {
-//            title: name.split('-').join(' '),
-//            blog: blog,
-//            desc: blog.short_desc,
-//            url: "/blog/programming/" + name + "/" + id
-//        })
-//     });
-// };
 
 exports.getBlogPage = function(req, res) {
     res.render("blogs/blogs-page.html");

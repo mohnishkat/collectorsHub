@@ -20,7 +20,6 @@
       function allBlogs() {
           return $http.get("/api/blogs/blogs");
       }
-
       // edit blog
       function editBlog(id) {
           return $http.get("/api/blogs/blog/" + id + "/edit");

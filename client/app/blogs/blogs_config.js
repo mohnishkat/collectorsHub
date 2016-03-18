@@ -30,7 +30,7 @@
             controller: "BlogsCtrl"
         })
         .state("user-blog", {
-            url: "/blogs",
+            url: "/blog/:id",
             templateUrl: "app/blogs/blog-page.html",
             controller: "BlogsCtrl"
         });

@@ -12,7 +12,9 @@
       'angularGrid',
       'angularMoment',
       'mgcrea.ngStrap',
-      'textAngular'
+      'textAngular',
+      'ngMaterial',
+      'ngAria'
     ])
     .config(config)
     .run(run)

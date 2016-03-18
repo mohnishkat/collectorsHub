@@ -1,0 +1,11 @@
+<md-toolbar class="md-warn">
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex">{{blog.name}}</h2>
+      <span flex></span>
+      <h6>{{blog.created_at}}</h6>
+    </div>
+</md-toolbar>
+<md-content flex layout-padding>
+    <h4>{{blog.short_desc}}</h4>
+    <p ng-bind-html="blog.content"></p>
+</md-content>

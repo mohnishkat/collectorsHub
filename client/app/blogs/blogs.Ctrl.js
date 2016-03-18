@@ -32,6 +32,8 @@
         if($stateParams.id) {
             blogsAPI.editBlog($stateParams.id).then(function(res) {
                 $scope.blog = res.data;
+                console.log(res.data);
+                console.log('Blog Appeared!');
             });
         }
 
