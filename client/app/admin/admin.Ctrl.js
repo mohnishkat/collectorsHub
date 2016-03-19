@@ -111,15 +111,14 @@
     $scope.deleteLook = function(look) {
       looksAPI.deleteLook(look)
         .success(function(data) {
-          var index = $scope.looks.indexOf(look);
           $scope.editLook.description = '';
           $scope.editLook.title = '';
           $scope.deleteBtn = false;
-          $scope.looks.splice(index, 1);
           alertSuccess.show();
+          //$scope.looks.splice($scope.looks.indexOf(look), 1);
           console.log('success, Look deleted ');
         })
-        .error(function(err) {
+        .catch(function(err) {
           alertFail.show();
           console.log('Error: ', err);
         });
