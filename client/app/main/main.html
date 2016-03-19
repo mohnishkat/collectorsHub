@@ -39,7 +39,7 @@
           gutter-size="10"
           angular-grid-id="gallery"
           refresh-on-img-load="true">
-     <li data-ng-repeat="look in looks track by $index"
+     <li data-ng-repeat="look in looks | orderBy: '-upVotes'"
           class="grid"
           ng-cloak>
         <a ui-sref="look ({ lookId: look._id })"
